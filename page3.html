@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For You, Keeri 💜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, 
+                #5e2b97, 
+                #6c3483, 
+                #8e44ad, 
+                #9b59b6);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 780px;
+            width: 100%;
+            padding: 40px 30px;
+            text-align: center;
+            animation: fadeIn 1.6s ease;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.25),
+                0 0 60px rgba(155, 89, 182, 0.2),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                #9b59b6, 
+                #e74c3c, 
+                #3498db, 
+                #9b59b6);
+            border-radius: 26px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .container:hover::before {
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.8), 
+                transparent);
+            border-radius: 3px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.85;
+            opacity: 0.95;
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 0 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        p:hover {
+            transform: translateY(-2px);
+        }
+
+        .signature {
+            margin-top: 35px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: signaturePulse 3s infinite;
+        }
+
+        @keyframes signaturePulse {
+            0%, 100% { 
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Decorative hearts */
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.3;
+            animation: floatHearts 6s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes floatHearts {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+                animation: gradientMoveMobile 12s ease infinite;
+            }
+            
+            @keyframes gradientMoveMobile {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 80% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            
+            .container {
+                padding: 35px 25px;
+                border-radius: 22px;
+                margin: 10px;
+                animation: fadeInMobile 1.4s ease;
+            }
+            
+            @keyframes fadeInMobile {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px) scale(0.96);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+            
+            h1 {
+                font-size: 26px;
+                margin-bottom: 22px;
+                padding-bottom: 12px;
+            }
+            
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+                padding: 0 5px;
+            }
+            
+            .signature {
+                font-size: 15px;
+                padding: 14px 22px;
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+                margin: 5px;
+            }
+            
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+            
+            p {
+                font-size: 15px;
+                line-height: 1.75;
+                padding: 0;
+            }
+            
+            .signature {
+                font-size: 14px;
+                padding: 12px 20px;
+                margin-top: 25px;
+            }
+            
+            .heart {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 25px 15px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            
+            .signature {
+                font-size: 13px;
+                padding: 10px 18px;
+            }
+        }
+
+        /* Prevent text selection */
+        .container, .signature {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* Allow selection for the message text */
+        p {
+            user-select: text;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+        }
+
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Decorative floating hearts -->
+    <div class="heart" style="top: 10%; left: 10%; animation-delay: 0s;">💜</div>
+    <div class="heart" style="top: 15%; right: 10%; animation-delay: 1s;">💜</div>
+    <div class="heart" style="bottom: 20%; left: 15%; animation-delay: 2s;">💜</div>
+    <div class="heart" style="bottom: 15%; right: 15%; animation-delay: 3s;">💜</div>
+
+    <div class="container">
+        <h1>For You Keeri 💜</h1>
+
+        <p>
+            Today is your birthday, so happy birthday.
+            In this world, I may have many friends,
+            but I don't know how many of them will truly stay for a long time.
+            With you, it has been an eleven-year friendship,
+            and every day our bond has only grown stronger.
+            No matter where we are or what situations we face,
+            our friendship has never reduced even a little.
+            <br><br>
+            In these eleven years, this is the first time
+            I'm realizing that I'm not with you on your birthday,
+            and that feels different.
+            But don't worry — we'll meet soon.
+            <br><br>
+            On your birthday, I just want to wish you
+            a year filled with good health, happiness,
+            and moments that make you feel proud of how far you've come.
+            May every new day bring clarity, confidence,
+            and reasons to smile.
+            Even if life takes us to different places
+            and changes us in different ways,
+            no one can ever break this bond.
+            <br><br>
+            Once again, happy birthday.
+            Take care of your health, enjoy your day,
+            and keep smiling.
+        </p>
+
+        <div class="signature">
+            — Always your friend 💜
+        </div>
+    </div>
+
+    <script>
+        // Add floating hearts on load
+        function createFloatingHearts() {
+            const container = document.querySelector('.container');
+            const heartCount = 8;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💜';
+                
+                // Random position
+                const left = Math.random() * 90 + 5;
+                const top = Math.random() * 90 + 5;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 4 + 4;
+                
+                heart.style.left = left + '%';
+                heart.style.top = top + '%';
+                heart.style.animationDelay = delay + 's';
+                heart.style.animationDuration = duration + 's';
+                heart.style.opacity = Math.random() * 0.4 + 0.1;
+                heart.style.fontSize = (Math.random() * 8 + 14) + 'px';
+                
+                document.body.appendChild(heart);
+            }
+        }
+        
+        // Add entrance animation
+        window.addEventListener('load', function() {
+            createFloatingHearts();
+            
+            // Add gentle scale animation on load
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px) scale(0.96)';
+            
+            setTimeout(() => {
+                container.style.transition = 'opacity 1.2s ease, transform 1.2s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0) scale(1)';
+            }, 300);
+        });
+        
+        // Touch device optimization
+        document.addEventListener('touchstart', function() {
+            document.body.classList.add('touch-active');
+        }, { passive: true });
+        
+        document.addEventListener('touchend', function() {
+            document.body.classList.remove('touch-active');
+        }, { passive: true });
+    </script>
+</body>
+</html>
