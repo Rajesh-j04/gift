@@ -31,7 +31,7 @@
             touch-action: manipulation;
         }
 
-        /* ✨ New: Gentle background sparkle animation */
+        /* ✨ Gentle background sparkle animation */
         body::before {
             content: '';
             position: absolute;
@@ -65,7 +65,7 @@
             animation: giftGlow 3s ease-in-out infinite;
         }
 
-        /* ✨ New: Gift box glow animation */
+        /* ✨ Gift box glow animation */
         @keyframes giftGlow {
             0%, 100% { 
                 transform: translate(-50%, -50%) translateY(0px);
@@ -78,7 +78,7 @@
         }
 
         .gift-box img {
-            width: 100px; /* Reduced from 130px */
+            width: 100px;
             cursor: pointer;
             filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
             transition: all 0.3s ease;
@@ -86,7 +86,7 @@
             animation: gentlePulse 4s ease-in-out infinite;
         }
 
-        /* ✨ New: Gentle pulse animation */
+        /* ✨ Gentle pulse animation */
         @keyframes gentlePulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.03); }
@@ -98,21 +98,21 @@
         }
 
         .gift-text {
-            margin-top: 12px; /* Reduced from 15px */
-            font-size: 14px; /* Reduced from 16px */
+            margin-top: 12px;
+            font-size: 14px;
             font-weight: 600;
-            letter-spacing: 0.6px; /* Reduced from 0.8px */
+            letter-spacing: 0.6px;
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
             background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px; /* Reduced from 10px 20px */
-            border-radius: 40px; /* Slightly reduced */
+            padding: 8px 16px;
+            border-radius: 40px;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: inline-block;
             animation: textGlow 3s ease-in-out infinite;
-            max-width: 220px; /* Reduced from 280px */
-            line-height: 1.3; /* Adjusted */
+            max-width: 220px;
+            line-height: 1.3;
         }
 
         @keyframes textGlow {
@@ -126,7 +126,7 @@
             }
         }
 
-        /* 📸 Photo cards - Adjusted sizes */
+        /* 📸 Photo cards */
         .photo-card {
             position: absolute;
             transform: translate(-50%, -50%);
@@ -154,10 +154,10 @@
         .photo-card .image-container {
             width: auto;
             height: auto;
-            border-radius: 12px; /* Reduced from 14px */
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 
-                0 8px 20px rgba(0, 0, 0, 0.3), /* Reduced shadows */
+                0 8px 20px rgba(0, 0, 0, 0.3),
                 0 3px 12px rgba(155, 89, 182, 0.3),
                 inset 0 0 0 2px rgba(255, 255, 255, 0.2);
             border: 2px solid rgba(255, 255, 255, 0.3);
@@ -167,7 +167,7 @@
             animation: cardFloat 6s ease-in-out infinite;
         }
 
-        /* ✨ New: Floating animation for photo cards */
+        /* ✨ Floating animation for photo cards */
         @keyframes cardFloat {
             0%, 100% { 
                 transform: translateY(0px) rotate(0deg);
@@ -180,7 +180,7 @@
         .photo-card:active .image-container {
             transform: scale(1.05);
             box-shadow: 
-                0 12px 28px rgba(0, 0, 0, 0.4), /* Reduced */
+                0 12px 28px rgba(0, 0, 0, 0.4),
                 0 6px 20px rgba(255, 215, 0, 0.2);
             border-color: rgba(255, 215, 0, 0.6);
         }
@@ -188,23 +188,23 @@
         /* Image sizes adjusted */
         .photo-card img {
             display: block;
-            max-width: 160px; /* Reduced from 220px */
-            max-height: 160px; /* Reduced from 220px */
+            max-width: 160px;
+            max-height: 160px;
             width: auto;
             height: auto;
-            border-radius: 8px; /* Reduced from 10px */
+            border-radius: 8px;
         }
 
         .photo-card p {
-            margin-top: 10px; /* Reduced from 12px */
-            font-size: 12px; /* Reduced from 13px */
-            line-height: 1.4; /* Adjusted from 1.5 */
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 1.4;
             text-align: center;
-            padding: 10px; /* Reduced from 12px */
+            padding: 10px;
             background: rgba(0, 0, 0, 0.7);
-            border-radius: 8px; /* Reduced from 10px */
+            border-radius: 8px;
             border-left: 3px solid #9b59b6;
-            max-width: 180px; /* Reduced from 240px */
+            max-width: 180px;
             width: 100%;
             word-break: break-word;
             transition: all 0.3s ease;
@@ -213,7 +213,7 @@
             animation: textFloat 7s ease-in-out infinite;
         }
 
-        /* ✨ New: Text floating animation */
+        /* ✨ Text floating animation */
         @keyframes textFloat {
             0%, 100% { 
                 transform: translateY(0);
@@ -228,52 +228,57 @@
         .photo-card:active p {
             background: rgba(0, 0, 0, 0.8);
             border-left-color: #ffd700;
-            transform: translateY(-2px); /* Reduced from -3px */
+            transform: translateY(-2px);
         }
 
-        /* Final click - Adjusted sizes */
+        /* ✨ FIXED: Final click button - Now visible on mobile */
         .final-click {
             position: absolute;
-            bottom: 30px; /* Reduced from 40px */
+            bottom: 40px; /* Increased from 30px for better visibility */
             left: 50%;
             transform: translateX(-50%);
-            font-size: 14px; /* Reduced from 16px */
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             display: none;
-            padding: 12px 28px; /* Reduced from 14px 35px */
+            padding: 14px 32px; /* Increased padding for better touch target */
             background: linear-gradient(45deg, #9b59b6, #e74c3c);
-            border-radius: 40px; /* Reduced from 50px */
+            border-radius: 40px;
             text-decoration: none;
-            letter-spacing: 0.8px; /* Reduced from 1px */
+            letter-spacing: 0.8px;
             box-shadow: 
-                0 6px 16px rgba(0, 0, 0, 0.3), /* Reduced */
-                0 0 12px rgba(231, 76, 60, 0.2);
+                0 8px 20px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(231, 76, 60, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
             animation: finalGlow 2.5s ease-in-out infinite;
-            z-index: 100;
-            min-width: 120px; /* Reduced from 140px */
+            z-index: 1000; /* Increased z-index to ensure visibility */
+            min-width: 140px; /* Increased minimum width */
             text-align: center;
             -webkit-tap-highlight-color: transparent;
+            /* Ensure button stays within viewport */
+            max-width: 85%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        /* ✨ New: Final button enhanced glow animation */
+        /* ✨ Final button enhanced glow animation */
         @keyframes finalGlow {
             0%, 100% { 
                 transform: translateX(-50%) scale(1);
                 box-shadow: 
-                    0 6px 16px rgba(0, 0, 0, 0.3), 
-                    0 0 12px rgba(231, 76, 60, 0.2),
+                    0 8px 20px rgba(0, 0, 0, 0.3), 
+                    0 0 15px rgba(231, 76, 60, 0.3),
                     0 0 0 rgba(255, 215, 0, 0);
                 background: linear-gradient(45deg, #9b59b6, #e74c3c);
             }
             50% { 
                 transform: translateX(-50%) scale(1.05);
                 box-shadow: 
-                    0 10px 25px rgba(0, 0, 0, 0.4), 
+                    0 12px 25px rgba(0, 0, 0, 0.4), 
                     0 0 25px rgba(231, 76, 60, 0.4),
-                    0 0 15px rgba(255, 215, 0, 0.2);
+                    0 0 20px rgba(255, 215, 0, 0.3);
                 background: linear-gradient(45deg, #e74c3c, #9b59b6);
             }
         }
@@ -283,7 +288,7 @@
             animation-play-state: paused;
         }
 
-        /* ✨ New: Success animation when all photos are revealed */
+        /* ✨ Success animation when all photos are revealed */
         .success-particles {
             position: absolute;
             top: 50%;
@@ -314,100 +319,106 @@
             }
             
             .gift-box img {
-                width: 90px; /* Reduced from 120px */
+                width: 90px;
             }
             
             .gift-text {
-                font-size: 13px; /* Reduced from 15px */
-                padding: 8px 14px; /* Reduced from 10px 18px */
-                margin-top: 10px; /* Reduced from 12px */
-                max-width: 200px; /* Reduced from 260px */
+                font-size: 13px;
+                padding: 8px 14px;
+                margin-top: 10px;
+                max-width: 200px;
             }
             
             .photo-card img {
-                max-width: 140px; /* Reduced from 200px */
-                max-height: 140px; /* Reduced from 200px */
+                max-width: 140px;
+                max-height: 140px;
             }
 
             .photo-card p {
-                font-size: 11px; /* Reduced from 12px */
-                padding: 8px; /* Reduced from 10px */
-                max-width: 160px; /* Reduced from 220px */
-                margin-top: 8px; /* Reduced from 10px */
+                font-size: 11px;
+                padding: 8px;
+                max-width: 160px;
+                margin-top: 8px;
             }
             
+            /* ✨ FIXED: Mobile button adjustments - Now visible */
             .final-click {
-                font-size: 13px; /* Reduced from 15px */
-                padding: 10px 22px; /* Reduced from 12px 28px */
-                min-width: 110px; /* Reduced from 130px */
-                bottom: 25px; /* Reduced from 35px */
+                font-size: 15px; /* Slightly larger font for mobile */
+                padding: 12px 28px;
+                min-width: 130px;
+                bottom: 35px; /* Adjusted position */
+                max-width: 90%; /* Ensure it fits on screen */
             }
         }
 
         @media (max-width: 480px) {
             .gift-box img {
-                width: 80px; /* Reduced from 110px */
+                width: 80px;
             }
             
             .gift-text {
-                font-size: 12px; /* Reduced from 14px */
-                padding: 7px 12px; /* Reduced from 9px 16px */
-                max-width: 180px; /* Reduced from 240px */
-                margin-top: 8px; /* Reduced from 10px */
+                font-size: 12px;
+                padding: 7px 12px;
+                max-width: 180px;
+                margin-top: 8px;
             }
             
             .photo-card img {
-                max-width: 120px; /* Reduced from 180px */
-                max-height: 120px; /* Reduced from 180px */
+                max-width: 120px;
+                max-height: 120px;
             }
 
             .photo-card p {
-                font-size: 10px; /* Reduced from 11px */
-                padding: 7px; /* Reduced from 9px */
-                max-width: 140px; /* Reduced from 200px */
-                line-height: 1.3; /* Adjusted from 1.4 */
+                font-size: 10px;
+                padding: 7px;
+                max-width: 140px;
+                line-height: 1.3;
             }
             
             .photo-card .image-container {
-                border-radius: 10px; /* Reduced from 12px */
+                border-radius: 10px;
             }
             
+            /* ✨ FIXED: Small mobile button adjustments */
             .final-click {
-                font-size: 12px; /* Reduced from 14px */
-                padding: 9px 18px; /* Reduced from 11px 24px */
-                min-width: 100px; /* Reduced from 120px */
-                bottom: 20px; /* Reduced from 30px */
+                font-size: 14px;
+                padding: 11px 24px;
+                min-width: 120px;
+                bottom: 30px; /* Adjusted position */
+                max-width: 85%;
             }
         }
 
         @media (max-width: 360px) {
             .gift-box img {
-                width: 70px; /* Reduced from 100px */
+                width: 70px;
             }
             
             .gift-text {
-                font-size: 11px; /* Reduced from 13px */
-                padding: 6px 10px; /* Reduced from 8px 14px */
-                max-width: 160px; /* Reduced from 220px */
+                font-size: 11px;
+                padding: 6px 10px;
+                max-width: 160px;
             }
             
             .photo-card img {
-                max-width: 100px; /* Reduced from 160px */
-                max-height: 100px; /* Reduced from 160px */
+                max-width: 100px;
+                max-height: 100px;
             }
 
             .photo-card p {
-                font-size: 9px; /* Reduced from 10px */
-                padding: 6px; /* Reduced from 8px */
-                max-width: 120px; /* Reduced from 180px */
-                margin-top: 6px; /* Reduced from 8px */
+                font-size: 9px;
+                padding: 6px;
+                max-width: 120px;
+                margin-top: 6px;
             }
             
+            /* ✨ FIXED: Very small mobile button adjustments */
             .final-click {
-                font-size: 11px; /* Reduced from 13px */
-                padding: 8px 14px; /* Reduced from 10px 20px */
-                min-width: 90px; /* Reduced from 110px */
-                bottom: 15px; /* Reduced from 25px */
+                font-size: 13px;
+                padding: 10px 20px;
+                min-width: 110px;
+                bottom: 25px; /* Adjusted position */
+                max-width: 80%;
             }
         }
 
@@ -431,7 +442,7 @@
         <div class="gift-text">Click gift to open the gift box</div>
     </div>
 
-    <!-- Final -->
+    <!-- ✨ FIXED: Final button with improved visibility -->
     <div class="final-click" id="finalClick" onclick="goToPage3()">
         Click here
     </div>
@@ -459,20 +470,18 @@
         const screenHeight = window.innerHeight;
         const minDimension = Math.min(screenWidth, screenHeight);
         
-        // Adjusted base radius for mobile - made smaller
         let baseRadius;
         if (screenWidth <= 360) {
-            baseRadius = minDimension * 0.22; // Reduced from 0.28
+            baseRadius = minDimension * 0.22;
         } else if (screenWidth <= 480) {
-            baseRadius = minDimension * 0.25; // Reduced from 0.30
+            baseRadius = minDimension * 0.25;
         } else if (screenWidth <= 768) {
-            baseRadius = minDimension * 0.28; // Reduced from 0.32
+            baseRadius = minDimension * 0.28;
         } else {
-            baseRadius = minDimension * 0.30; // Reduced from 0.35
+            baseRadius = minDimension * 0.30;
         }
         
-        // Ensure minimum radius - made smaller
-        return Math.max(baseRadius, 160); // Reduced from 200
+        return Math.max(baseRadius, 160);
     }
 
     function handleGiftClick() {
@@ -508,6 +517,7 @@
         if (step === photos.length) {
             document.querySelector('.gift-text').innerHTML = 
                 "All memories!<br><small>Gift is open</small>";
+            // ✨ FIXED: Show the final button
             document.getElementById("finalClick").style.display = "block";
             
             // ✨ Play celebration animation
@@ -629,17 +639,16 @@
         const img = new Image();
         img.src = data.img;
         img.onload = function() {
-            // Determine max dimensions for mobile - adjusted smaller
-            let maxWidth = 160; // Reduced from 220
-            let maxHeight = 160; // Reduced from 220
+            let maxWidth = 160;
+            let maxHeight = 160;
             
             if (window.innerWidth <= 480) {
-                maxWidth = 120; // Reduced from 180
-                maxHeight = 120; // Reduced from 180
+                maxWidth = 120;
+                maxHeight = 120;
             }
             if (window.innerWidth <= 360) {
-                maxWidth = 100; // Reduced from 160
-                maxHeight = 100; // Reduced from 160
+                maxWidth = 100;
+                maxHeight = 100;
             }
             
             card.innerHTML = `
@@ -661,9 +670,9 @@
 
         // Error handling
         img.onerror = function() {
-            let maxSize = 160; // Reduced from 200
-            if (window.innerWidth <= 480) maxSize = 120; // Reduced from 160
-            if (window.innerWidth <= 360) maxSize = 100; // Reduced from 140
+            let maxSize = 160;
+            if (window.innerWidth <= 480) maxSize = 120;
+            if (window.innerWidth <= 360) maxSize = 100;
             
             card.innerHTML = `
                 <div class="image-container">
@@ -696,7 +705,6 @@
     
     // Add touch event listeners for better mobile interaction
     document.addEventListener('touchstart', function() {
-        // Add active state for touch feedback
         document.body.classList.add('touch-active');
     }, { passive: true });
     
