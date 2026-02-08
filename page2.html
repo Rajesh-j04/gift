@@ -231,17 +231,17 @@
             transform: translateY(-2px);
         }
 
-        /* ✨ FIXED: Final click button - Now visible on mobile */
+        /* 🎯 FIXED: "Click Here" button at TOP of page */
         .final-click {
             position: absolute;
-            bottom: 40px; /* Increased from 30px for better visibility */
+            top: 30px; /* Changed from bottom: 40px to top: 30px */
             left: 50%;
             transform: translateX(-50%);
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             display: none;
-            padding: 14px 32px; /* Increased padding for better touch target */
+            padding: 12px 32px;
             background: linear-gradient(45deg, #9b59b6, #e74c3c);
             border-radius: 40px;
             text-decoration: none;
@@ -252,11 +252,10 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
             animation: finalGlow 2.5s ease-in-out infinite;
-            z-index: 1000; /* Increased z-index to ensure visibility */
-            min-width: 140px; /* Increased minimum width */
+            z-index: 1000;
+            min-width: 140px;
             text-align: center;
             -webkit-tap-highlight-color: transparent;
-            /* Ensure button stays within viewport */
             max-width: 85%;
             white-space: nowrap;
             overflow: hidden;
@@ -341,13 +340,13 @@
                 margin-top: 8px;
             }
             
-            /* ✨ FIXED: Mobile button adjustments - Now visible */
+            /* 🎯 FIXED: Mobile button at top */
             .final-click {
-                font-size: 15px; /* Slightly larger font for mobile */
+                font-size: 15px;
                 padding: 12px 28px;
                 min-width: 130px;
-                bottom: 35px; /* Adjusted position */
-                max-width: 90%; /* Ensure it fits on screen */
+                top: 25px; /* Changed from bottom: 35px to top: 25px */
+                max-width: 90%;
             }
         }
 
@@ -379,12 +378,12 @@
                 border-radius: 10px;
             }
             
-            /* ✨ FIXED: Small mobile button adjustments */
+            /* 🎯 FIXED: Small mobile button at top */
             .final-click {
                 font-size: 14px;
                 padding: 11px 24px;
                 min-width: 120px;
-                bottom: 30px; /* Adjusted position */
+                top: 20px; /* Changed from bottom: 30px to top: 20px */
                 max-width: 85%;
             }
         }
@@ -412,12 +411,12 @@
                 margin-top: 6px;
             }
             
-            /* ✨ FIXED: Very small mobile button adjustments */
+            /* 🎯 FIXED: Very small mobile button at top */
             .final-click {
                 font-size: 13px;
                 padding: 10px 20px;
                 min-width: 110px;
-                bottom: 25px; /* Adjusted position */
+                top: 15px; /* Changed from bottom: 25px to top: 15px */
                 max-width: 80%;
             }
         }
@@ -442,7 +441,7 @@
         <div class="gift-text">Click gift to open the gift box</div>
     </div>
 
-    <!-- ✨ FIXED: Final button with improved visibility -->
+    <!-- 🎯 FIXED: "Click Here" button now at TOP of page -->
     <div class="final-click" id="finalClick" onclick="goToPage3()">
         Click here
     </div>
@@ -517,11 +516,15 @@
         if (step === photos.length) {
             document.querySelector('.gift-text').innerHTML = 
                 "All memories!<br><small>Gift is open</small>";
-            // ✨ FIXED: Show the final button
+            
+            // 🎯 Show the final button at the TOP
             document.getElementById("finalClick").style.display = "block";
             
             // ✨ Play celebration animation
             playCelebration();
+            
+            // 🎯 Move gift text slightly down to make space for top button
+            document.querySelector('.gift-text').style.marginTop = "25px";
         }
     }
 
